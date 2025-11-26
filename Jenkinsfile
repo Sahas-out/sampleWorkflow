@@ -67,7 +67,6 @@ pipeline {
         stage('Run Container') {
             steps {
                 script {
-                    sh "docker rm -f calc || true"
                     withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh "docker run -d -p 8080:8080 --name calc $DOCKER_USER/${IMAGE_NAME}:latest"
                     }
