@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "calculator-app"
-        DOCKER_HUB_USER = "your-dockerhub-username"   // Change this
+        // DOCKER_HUB_USER = "your-dockerhub-username"   // Change this
     }
 
     stages {
@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/yourusername/calculator-app.git',
+                    url: 'https://github.com/Sahas-out/sampleWorkflow',
                     credentialsId: 'github-creds'
             }
         }
