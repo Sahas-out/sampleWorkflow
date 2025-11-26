@@ -68,7 +68,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                        sh "docker run -d -p 8080:8080 --name calc $DOCKER_USER/${IMAGE_NAME}:latest"
+                        sh "docker run -d -p 5001:5001 --name calc $DOCKER_USER/${IMAGE_NAME}:latest"
                     }
                 }
             }
